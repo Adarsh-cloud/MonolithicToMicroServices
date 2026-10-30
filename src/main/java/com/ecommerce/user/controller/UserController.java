@@ -58,7 +58,7 @@ public class UserController {
 
 
 
-    @PutMapping("/users/{id}")
+    @PutMapping("/users/v1/{id}")
     public ResponseEntity<UserDTO> updateUser(@PathVariable Long id,@RequestBody UserDTO userDTO){
 
         Optional<UserDTO> obtainedUserDTO = userService.findByIdV3(id);
@@ -72,6 +72,15 @@ public class UserController {
     }
 
 
+    @PutMapping("/users/v2/{id}")
+    public ResponseEntity<UserDTO> updateUserV2(@PathVariable Long id,@RequestBody UserDTO userDTO) {
 
+        boolean flag = userService.updateUserV2(userDTO, id);
+        if (flag) {
+            return ResponseEntity.ok(getUserById(id).getBody());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 }

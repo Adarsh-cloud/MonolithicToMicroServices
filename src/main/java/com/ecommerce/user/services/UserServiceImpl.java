@@ -54,4 +54,14 @@ public class UserServiceImpl implements UserService{
         userDTO1.setLastName(userDTO.getLastName());
         return Optional.of(userDTO1);
     }
+
+    @Override
+    public boolean updateUserV2(UserDTO userDTO, Long id) {
+       return usersList.stream().filter(n->n.getId().equals(id)).
+                findFirst().map(n->{
+            n.setFirstName(userDTO.getFirstName());
+            n.setLastName(userDTO.getLastName());
+            return true;
+        }).orElse(false);
+    }
 }

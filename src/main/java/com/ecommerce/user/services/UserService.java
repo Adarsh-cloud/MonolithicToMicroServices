@@ -15,4 +15,6 @@ public interface UserService {
     Optional<UserDTO> findByIdV3(Long id);
 
     Optional<UserDTO> updateUser(UserDTO userDTO, UserDTO userDTO1);
+
+    boolean updateUserV2(UserDTO userDTO, Long id);
 }
