@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service(value = "userServiceImpl")
 public class UserServiceImpl implements UserService{
 
     List<UserDTO> usersList= new ArrayList<>();
@@ -64,4 +64,5 @@ public class UserServiceImpl implements UserService{
             return true;
         }).orElse(false);
     }
+
 }
