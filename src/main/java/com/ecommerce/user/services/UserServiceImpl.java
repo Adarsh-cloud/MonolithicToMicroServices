@@ -65,4 +65,9 @@ public class UserServiceImpl implements UserService{
         }).orElse(false);
     }
 
+    @Override
+    public void deleteUser(Long id) {
+
+    }
+
 }

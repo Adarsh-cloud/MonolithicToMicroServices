@@ -17,4 +17,6 @@ public interface UserService {
     Optional<UserDTO> updateUser(UserDTO userDTO, UserDTO userDTO1);
 
     boolean updateUserV2(UserDTO userDTO, Long id);
+
+    void deleteUser(Long id);
 }
