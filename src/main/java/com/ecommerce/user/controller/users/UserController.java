@@ -1,15 +1,13 @@
-package com.ecommerce.user.controller;
+package com.ecommerce.user.controller.users;
 
-import com.ecommerce.user.dto.UserDTO;
-import com.ecommerce.user.services.UserService;
+import com.ecommerce.user.dto.users.UserDTO;
+import com.ecommerce.user.services.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

@@ -1,7 +1,6 @@
-package com.ecommerce.user.dto;
+package com.ecommerce.user.dto.users;
 
-import com.ecommerce.user.model.Address;
-import com.ecommerce.user.model.UserRole;
+import com.ecommerce.user.model.users.UserRole;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

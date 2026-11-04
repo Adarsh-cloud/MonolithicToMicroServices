@@ -1,6 +1,6 @@
-package com.ecommerce.user.services;
+package com.ecommerce.user.services.users;
 
-import com.ecommerce.user.dto.UserDTO;
+import com.ecommerce.user.dto.users.UserDTO;
 import com.ecommerce.user.exception.UserNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service(value = "userServiceImpl")
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     List<UserDTO> usersList= new ArrayList<>();
     Long counter=0L;

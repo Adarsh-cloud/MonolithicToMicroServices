@@ -1,6 +1,9 @@
 package com.ecommerce.user.handler;
 
+import com.ecommerce.user.exception.ProductNOTFoundException;
 import com.ecommerce.user.exception.UserNotFoundException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,6 +13,7 @@ import java.util.Date;
 
 @RestControllerAdvice
 public class UserExceptionHandler {
+    Logger logger= LoggerFactory.getLogger(UserNotFoundException.class);
 
     @ExceptionHandler(UserNotFoundException.class)
     public ResponseEntity<UserErrorResponse> userNotFound(UserNotFoundException exception){
@@ -19,4 +23,16 @@ public class UserExceptionHandler {
         response.setTimestamp(new Date());
         return  new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(ProductNOTFoundException.class)
+    public ResponseEntity<UserErrorResponse> userNotFound(ProductNOTFoundException exception2){
+        logger.info("Inside the userNot found");
+        logger.info(exception2.getMessage());
+        UserErrorResponse response = new UserErrorResponse();
+        response.setHttpStatus(HttpStatus.NOT_FOUND);
+        response.setMessage(exception2.getMessage());
+        response.setTimestamp(new Date());
+        return  new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+    }
+
 }

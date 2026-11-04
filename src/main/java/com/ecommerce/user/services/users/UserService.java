@@ -1,6 +1,6 @@
-package com.ecommerce.user.services;
+package com.ecommerce.user.services.users;
 
-import com.ecommerce.user.dto.UserDTO;
+import com.ecommerce.user.dto.users.UserDTO;
 
 import java.util.List;
 import java.util.Optional;

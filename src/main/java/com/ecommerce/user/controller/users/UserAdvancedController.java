@@ -1,10 +1,8 @@
-package com.ecommerce.user.controller;
+package com.ecommerce.user.controller.users;
 
-import com.ecommerce.user.dto.UserDTO;
-import com.ecommerce.user.dto.UserRequest;
-import com.ecommerce.user.dto.UserResponse;
-import com.ecommerce.user.services.UserService;
-import com.ecommerce.user.services.UserServiceV2;
+import com.ecommerce.user.dto.users.UserRequest;
+import com.ecommerce.user.dto.users.UserResponse;
+import com.ecommerce.user.services.users.UserServiceV2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/advanced")

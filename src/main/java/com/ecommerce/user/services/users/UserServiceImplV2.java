@@ -1,11 +1,11 @@
-package com.ecommerce.user.services;
+package com.ecommerce.user.services.users;
 
-import com.ecommerce.user.dto.AddressDTO;
-import com.ecommerce.user.dto.UserRequest;
-import com.ecommerce.user.dto.UserResponse;
+import com.ecommerce.user.dto.users.AddressDTO;
+import com.ecommerce.user.dto.users.UserRequest;
+import com.ecommerce.user.dto.users.UserResponse;
 import com.ecommerce.user.exception.UserNotFoundException;
-import com.ecommerce.user.model.Address;
-import com.ecommerce.user.model.User;
+import com.ecommerce.user.model.users.Address;
+import com.ecommerce.user.model.users.User;
 import com.ecommerce.user.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service(value = "userServiceImplV2")
-public class UserServiceImplV2 implements UserServiceV2{
+public class UserServiceImplV2 implements UserServiceV2 {
     Logger logger = LoggerFactory.getLogger(UserServiceImplV2.class);
 
     UserRepository userRepository;
