@@ -5,6 +5,7 @@ import com.ecommerce.user.dto.products.ProductResponse;
 import com.ecommerce.user.exception.ProductNOTFoundException;
 import com.ecommerce.user.model.products.Product;
 import com.ecommerce.user.repository.ProductRepository;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,20 @@ public class ProductServiceImpl implements ProductService {
         logger.info("Deleting product with id :: {}", id);
         Product product = productRepository.findById(id).orElseThrow(() -> new ProductNOTFoundException("Product with id :: " + id + " doesn't exists"));
         productRepository.delete(product);
+    }
+
+    @Override
+    @Transactional
+    public ProductResponse updateProduct(Long id, ProductRequest productRequest) {
+       logger.info("Updating product with id :: {}", id);
+        Product product = productRepository.findById(id).orElseThrow(() -> new ProductNOTFoundException("Product with id :: " + id + " not exists"));
+        product.setName(productRequest.getName());
+        product.setCategory(productRequest.getCategory());
+        product.setImage(productRequest.getImage());
+        product.setPrice(productRequest.getPrice());
+        product.setStockQuantity(productRequest.getStockQuantity());
+        product.setDescription(productRequest.getDescription());
+        return createProductDTO(product);
     }
 
     private Product createProductEntity(ProductRequest productRequest){
